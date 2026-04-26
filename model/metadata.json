@@ -1,0 +1,104 @@
+{
+  "created_at_utc": "2026-04-20T12:39:35.781905+00:00",
+  "dataset_path": "/content/drive/MyDrive/TalenMiner/Resume.csv",
+  "rows_used": 2484,
+  "train_rows": 1987,
+  "test_rows": 497,
+  "preprocessing": {
+    "lowercase": true,
+    "remove_urls": true,
+    "remove_non_alpha": true,
+    "remove_stopwords": true,
+    "lemmatization": true
+  },
+  "feature_extraction": {
+    "type": "TfidfVectorizer",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 5000,
+    "sublinear_tf": true,
+    "min_df": 2
+  },
+  "dimensionality_reduction": {
+    "type": "TruncatedSVD",
+    "n_components": 100
+  },
+  "classes": [
+    "ACCOUNTANT",
+    "ADVOCATE",
+    "AGRICULTURE",
+    "APPAREL",
+    "ARTS",
+    "AUTOMOBILE",
+    "AVIATION",
+    "BANKING",
+    "BPO",
+    "BUSINESS-DEVELOPMENT",
+    "CHEF",
+    "CONSTRUCTION",
+    "CONSULTANT",
+    "DESIGNER",
+    "DIGITAL-MEDIA",
+    "ENGINEERING",
+    "FINANCE",
+    "FITNESS",
+    "HEALTHCARE",
+    "HR",
+    "INFORMATION-TECHNOLOGY",
+    "PUBLIC-RELATIONS",
+    "SALES",
+    "TEACHER"
+  ],
+  "best_model": "linear_svc",
+  "best_metrics": {
+    "model": "linear_svc",
+    "accuracy": 0.6519114688128773,
+    "precision_macro": 0.6408186228353198,
+    "recall_macro": 0.6139774262414422,
+    "f1_macro": 0.6011202802085546,
+    "auc_macro_ovr": null
+  },
+  "leaderboard": [
+    {
+      "model": "linear_svc",
+      "accuracy": 0.6519114688128773,
+      "precision_macro": 0.6408186228353198,
+      "recall_macro": 0.6139774262414422,
+      "f1_macro": 0.6011202802085546,
+      "auc_macro_ovr": null
+    },
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.613682092555332,
+      "precision_macro": 0.5966958404296161,
+      "recall_macro": 0.5636298468249269,
+      "f1_macro": 0.5487636905951382,
+      "auc_macro_ovr": 0.9459504154304857
+    },
+    {
+      "model": "random_forest",
+      "accuracy": 0.5895372233400402,
+      "precision_macro": 0.590325087903493,
+      "recall_macro": 0.5521599888161673,
+      "f1_macro": 0.536677175415412,
+      "auc_macro_ovr": 0.9175592490045782
+    },
+    {
+      "model": "decision_tree",
+      "accuracy": 0.3822937625754527,
+      "precision_macro": 0.38568896471568964,
+      "recall_macro": 0.3563662151476797,
+      "f1_macro": 0.3592717500391904,
+      "auc_macro_ovr": 0.675994096314729
+    }
+  ],
+  "artifacts": {
+    "model": "best_model.pkl",
+    "vectorizer": "tfidf_vectorizer.pkl",
+    "label_encoder": "label_encoder.pkl",
+    "svd": "svd.pkl"
+  },
+  "note": "Based on Phase 3 findings: uses lemmatization, TruncatedSVD, and compares Decision Tree, Random Forest, Logistic Regression, and others."
+}
