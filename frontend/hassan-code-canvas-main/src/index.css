@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium SaaS design system. All colors HSL. */
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;       /* #F8FAFC */
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 239 84% 67%;          /* Soft indigo #6366F1 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 250 90% 76%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 250 95% 96%;
+    --accent-foreground: 239 84% 50%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 239 84% 60%;
+
+    --radius: 1rem;
+
+    /* Glass + gradients */
+    --glass-bg: 0 0% 100% / 0.6;
+    --glass-border: 0 0% 100% / 0.4;
+
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(262 83% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(239 84% 67%) 0%, hsl(262 83% 70%) 50%, hsl(199 89% 65%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(204 94% 94%) 100%);
+
+    --shadow-soft: 0 10px 40px -12px hsl(239 84% 60% / 0.25);
+    --shadow-card: 0 4px 24px -8px hsl(222 47% 11% / 0.08);
+    --shadow-glow: 0 0 60px hsl(250 95% 70% / 0.3);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222 47% 4%;          /* #020617 */
+    --foreground: 213 31% 91%;
+
+    --card: 217 33% 14%;               /* #1E293B */
+    --card-foreground: 213 31% 91%;
+
+    --popover: 217 33% 14%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 250 95% 70%;            /* Neon purple-blue */
+    --primary-foreground: 222 47% 7%;
+    --primary-glow: 199 95% 65%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 213 31% 91%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 20%;
+    --accent-foreground: 250 95% 80%;
+
+    --success: 142 71% 50%;
+    --success-foreground: 222 47% 7%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 47% 7%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 250 95% 70%;
+
+    --glass-bg: 217 33% 17% / 0.6;
+    --glass-border: 0 0% 100% / 0.08;
+
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(262 83% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(239 84% 67%) 0%, hsl(262 83% 70%) 50%, hsl(199 89% 65%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(222 47% 4%) 0%, hsl(222 47% 9%) 100%);
+
+    --shadow-soft: 0 10px 40px -12px hsl(250 95% 60% / 0.4);
+    --shadow-card: 0 4px 24px -8px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 80px hsl(250 95% 70% / 0.4);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-soft { background: var(--gradient-soft); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
